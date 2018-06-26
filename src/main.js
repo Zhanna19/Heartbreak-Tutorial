@@ -1,16 +1,22 @@
 require('../node_modules/vuetify/src/stylus/app.styl')
 
 import Vue from 'vue'
+import HBRemote from './components/Remote'
+import HBRemotesList from './components/RemotesList'
+
 import {
   Vuetify,
   VApp,
-  VNavigationDrawer,
   VFooter,
   VList,
   VBtn,
   VIcon,
   VGrid,
   VToolbar,
+  VSubheader,
+  VAvatar,
+  VMenu,
+  VSwitch,
   transitions
 } from 'vuetify'
 import App from './App.vue'
@@ -18,13 +24,16 @@ import App from './App.vue'
 Vue.use(Vuetify, {
   components: {
     VApp,
-    VNavigationDrawer,
     VFooter,
     VList,
     VBtn,
     VIcon,
-    VGrid,
     VToolbar,
+    VGrid,
+    VSubheader,
+    VAvatar,
+    VMenu,
+    VSwitch,
     transitions
   },
   theme: {
@@ -37,6 +46,9 @@ Vue.use(Vuetify, {
     warning: '#FFC107'
   }
 })
+
+Vue.component('hb-remote', HBRemote)
+Vue.component('hb-remotes-list', HBRemotesList)
 
 new Vue({
   el: '#app',

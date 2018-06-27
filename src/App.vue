@@ -23,7 +23,7 @@
         <v-icon class="grey--text text--darken-3">settings</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn absolute fab top right color="pink">
+      <v-btn absolute fab top right color="pink" to="/remote">
         <v-icon>add</v-icon>
       </v-btn>
     </v-footer>

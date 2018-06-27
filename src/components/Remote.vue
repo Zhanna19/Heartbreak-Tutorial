@@ -18,7 +18,7 @@
                       <v-list-tile>
                           <v-list-tile-title>Edit</v-list-tile-title>
                       </v-list-tile>
-                      <v-list-tile>
+                      <v-list-tile @click="removeRemote(remote._id)">
                           <v-list-tile-title>Remove</v-list-tile-title>
                       </v-list-tile>
                   </v-list>
@@ -44,6 +44,11 @@
             monitoring: true
           }
         }
+      }
+    },
+    methods: {
+      removeRemote: function(id)  {
+        this.$store.dispatch('delete', id)
       }
     }
   }

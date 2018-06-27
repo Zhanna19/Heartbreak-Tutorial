@@ -1,8 +1,12 @@
 require('../node_modules/vuetify/src/stylus/app.styl')
 
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+
 import HBRemote from './components/Remote'
 import HBRemotesList from './components/RemotesList'
+
+import router from './router'
 
 import {
   Vuetify,
@@ -17,6 +21,9 @@ import {
   VAvatar,
   VMenu,
   VSwitch,
+  VCard,
+  VTextField,
+  VProgressLinear,
   transitions
 } from 'vuetify'
 import App from './App.vue'
@@ -34,6 +41,9 @@ Vue.use(Vuetify, {
     VAvatar,
     VMenu,
     VSwitch,
+    VCard,
+    VTextField,
+    VProgressLinear,
     transitions
   },
   theme: {
@@ -47,10 +57,12 @@ Vue.use(Vuetify, {
   }
 })
 
+Vue.use(VueRouter)
 Vue.component('hb-remote', HBRemote)
 Vue.component('hb-remotes-list', HBRemotesList)
 
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })

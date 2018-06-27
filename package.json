@@ -5,11 +5,12 @@
   "author": "Zhanna19 <funnygirl322@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --host=0.0.0.0",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --host=localhost",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
     "vue": "^2.5.3",
+    "vue-router": "^3.0.1",
     "vuetify": "^1.0.0"
   },
   "devDependencies": {

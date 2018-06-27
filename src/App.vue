@@ -12,11 +12,21 @@
       <v-container fluid style="padding-top: 70px">
         <v-layout column>
           <v-flex xs12>
-            <hb-remotes-list></hb-remotes-list>
+            <router-view></router-view>
           </v-flex>
         </v-layout>
       </v-container>
     </main>
+
+    <v-footer :fixed="true">
+      <v-btn icon>
+        <v-icon class="grey--text text--darken-3">settings</v-icon>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn absolute fab top right color="pink">
+        <v-icon>add</v-icon>
+      </v-btn>
+    </v-footer>
   </v-app>
 </template>
 

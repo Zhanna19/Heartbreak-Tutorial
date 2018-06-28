@@ -12,7 +12,9 @@
       <v-container fluid style="padding-top: 70px">
         <v-layout column>
           <v-flex xs12>
-            <router-view></router-view>
+            <v-slide-y-transition mode="out-in">
+              <router-view></router-view>
+            </v-slide-y-transition>
           </v-flex>
         </v-layout>
       </v-container>

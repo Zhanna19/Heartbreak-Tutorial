@@ -1,14 +1,12 @@
 require('../node_modules/vuetify/src/stylus/app.styl')
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Vuex from 'vuex'
 
 import HBRemote from './components/Remote'
 import HBRemotesList from './components/RemotesList'
 
 import router from './router'
-import { storeDef } from './store'
+import store from './store'
 
 import {
   Vuetify,
@@ -59,12 +57,8 @@ Vue.use(Vuetify, {
   }
 })
 
-Vue.use(VueRouter)
-Vue.use(Vuex)
 Vue.component('hb-remote', HBRemote)
 Vue.component('hb-remotes-list', HBRemotesList)
-
-const store = new Vuex.Store(storeDef)
 
 new Vue({
   el: '#app',

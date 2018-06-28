@@ -17,6 +17,12 @@ export default new Router({
       path: '/remote',
       name: 'RemoteForm',
       component: RemoteForm
+    },
+    {
+      path: '/remote/:id',
+      name: 'RemoteForm',
+      component: RemoteForm,
+      props: true
     }
   ]
 })

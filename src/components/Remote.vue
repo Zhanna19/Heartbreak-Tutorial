@@ -15,7 +15,7 @@
                       <v-icon>more_vert</v-icon>
                   </v-btn>
                   <v-list>
-                      <v-list-tile>
+                      <v-list-tile :to="'/remote/' + remote._id">
                           <v-list-tile-title>Edit</v-list-tile-title>
                       </v-list-tile>
                       <v-list-tile @click="removeRemote(remote._id)">

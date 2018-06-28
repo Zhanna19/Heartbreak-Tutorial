@@ -26,7 +26,7 @@
       return {
         loading: true,
         remote: {
-          _id: Math.random() % 10,
+          _id: '',
           alias: '',
           url: '',
           interval: 10
@@ -35,12 +35,17 @@
     },
     created () {
       this.loading = false
+      let id = this.$route.params.id
+      if (id) {
+        this.remote = this.$store.getters.remote(id)
+      }
     },
     methods: {
       cancel () {
         this.$router.push({ path: '/'})
       },
       save () {
+        this.remote._id = Date.now()
         this.$store.dispatch('save', this.remote)
           .then(res => {
             this.$router.push({path: '/'})

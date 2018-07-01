@@ -4,5 +4,14 @@
   "build": {
     "nwVersion": "0.31.4"
   },
-  "main": "http://localhost:8080"
+  "main": "http://localhost:8080",
+  "node-remote" : "http://*/*",
+  "window": {
+    "id": "mainWindow",
+    "title": "Heartbeat",
+    "width": 455,
+    "height": 460,
+    "frame": true,
+    "resizable": true
+  }
 }

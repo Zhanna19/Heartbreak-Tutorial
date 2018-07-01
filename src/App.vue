@@ -1,9 +1,9 @@
 <template>
   <v-app dark>
-    <v-toolbar dart fixed dense>
+    <v-toolbar dart fixed dense style="-webkit-app-region: drag;">
       <v-toolbar-title>Heartbeat</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <v-btn icon @click="closeWindow">
         <v-icon>close</v-icon>
       </v-btn>
     </v-toolbar>
@@ -33,9 +33,15 @@
 </template>
 
 <script>
+  let win = nw.Window.get()
   export default {
     data () {
       return {
+      }
+    },
+    methods: {
+      closeWindow () {
+        win.close()
       }
     }
   }

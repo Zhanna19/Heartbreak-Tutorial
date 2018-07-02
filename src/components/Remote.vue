@@ -1,7 +1,9 @@
 <template>
   <v-list-tile avatar>
       <v-list-tile-avatar>
-          <v-icon class="white--text">report_problem</v-icon>
+         <transition name="fade">
+             <v-icon class="white--text" :class="icon.classes">{{ icon.name }}</v-icon>
+         </transition>
       </v-list-tile-avatar>
       <v-list-tile-content>
           <v-list-tile-title>{{ remote.alias }}</v-list-tile-title>
@@ -29,8 +31,10 @@
 </template>
 
 <script>
+  import Monitor from '../mixins/pingLogic'
   export default {
     name: 'Remote',
+    mixins: [Monitor],
     props: {
       remote: {
         type: Object,
@@ -46,14 +50,45 @@
         }
       }
     },
+    data () {
+      return {
+        currentStatus: this.remote.status
+      }
+    },
     methods: {
       removeRemote: function(id)  {
         this.$store.dispatch('delete', id)
+      }
+    },
+    computed: {
+      icon () {
+        const icon = {
+          '-': {
+            name: 'report_problem',
+            classes: ['gray', 'lighten-2']
+          },
+          'online': {
+            name: 'swap_vert',
+            classes: ['light-green', 'darken-1']
+          },
+          'offline': {
+            name: 'not_interested',
+            classes: ['red', 'darken-1']
+          }
+        }
+        return icon[this.currentStatus || '-']
       }
     }
   }
 </script>
 
 <style scoped>
-
+    .fade-leave-active,
+    .fade-enter-active {
+        transition: opacity 0.8s;
+    }
+    .fade-enter,
+    .fade-leave-to {
+     opacity: 0;
+    }
 </style>

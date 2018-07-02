@@ -52,7 +52,11 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  externals: {
+    fs: 'commonjs fs',
+    path: 'commonjs path'
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {

@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "concurrently": "^3.6.0",
+    "fs": "0.0.1-security",
     "nwjs-builder-phoenix": "^1.14.6",
+    "ping-monitor": "^0.1.6",
     "vue": "^2.5.3",
     "vue-router": "^3.0.1",
     "vuetify": "^1.0.0",

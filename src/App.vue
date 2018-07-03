@@ -13,7 +13,9 @@
         <v-layout column>
           <v-flex xs12>
             <v-slide-y-transition mode="out-in">
-              <router-view></router-view>
+              <keep-alive include="RemotesList">
+                <router-view></router-view>
+              </keep-alive>
             </v-slide-y-transition>
           </v-flex>
         </v-layout>

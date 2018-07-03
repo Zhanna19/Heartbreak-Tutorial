@@ -2,7 +2,9 @@ const Monitor = require('ping-monitor')
 
 export default {
   created () {
-    this.createMonitor()
+    if(this.remote.monitoring) {
+      this.createMonitor()
+    }
   },
   destroyed () {
     this.destroyMonitor()
